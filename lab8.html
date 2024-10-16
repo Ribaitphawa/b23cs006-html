@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>functions
+</title>
+<script type="text/javascript">
+function add()
+{
+	document.f1.t3.value=parseInt(document.f1.t1.value)+parseInt(document.f1.t2.value)
+}
+function sub()
+{
+	document.f1.t3.value=parseInt(document.f1.t1.value)-parseInt(document.f1.t2.value)
+}
+function mul()
+{
+	document.f1.t3.value=parseInt(document.f1.t1.value)*parseInt(document.f1.t2.value)
+}
+function divi()
+{
+	document.f1.t3.value=parseInt(document.f1.t1.value)/parseInt(document.f1.t2.value)
+}
+
+
+
+var i = 0; 			
+var images = [];	
+var time = 1000;	
+images[0]="https://i.pinimg.com/originals/01/af/b0/01afb02952b6dca6c4af41c4db2f5f09.jpg";
+images[1] = "https://i.pinimg.com/originals/0d/3c/05/0d3c05d45ca7e8adba8bf3c946b6c5c4.jpg";
+images[2] = "https://i.pinimg.com/originals/c2/a7/1e/c2a71e9a9f662b0a5969799013f7248c.jpg";
+images[3] = "https://wallpapers.com/images/hd/modern-work-desk-aestheticwith-coffee-47cv62g1qtvpchgi.jpg";
+
+function changeImg()
+{
+	document.slide.src = images[i];
+
+		if(i < images.length - 1){
+	 
+	  i++; 
+	} else { 
+				i = 0;
+	}
+
+		setTimeout("changeImg()", time);
+}
+
+window.onload=changeImg;
+
+
+</script>
+
+
+</head>
+<body>
+<form name=f1>
+Enter Number 1: <input type="text" name="t1"><br>
+<br>
+Enter Number 2: <input type="text" name="t2"><br>
+<br>
+Result: <input type="text" name="t3"><br>
+<br>
+<input type="button" name="b1" value="Add" onclick="add()">
+<input type="button" name="b2" value="Subtract" onclick="sub()">
+<input type="button" name="b3" value="Multiplication" onclick="mul()">
+<input type="button" name="b4" value="Division" onclick="divi()">
+</form>
+<br>
+<br>
+<img name="slide" width="auto" height="400">
+
+</body>
+</html>+
